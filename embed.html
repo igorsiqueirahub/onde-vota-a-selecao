@@ -1,0 +1,18 @@
+<!-- Cole este trecho no código-fonte da sua página, onde o infográfico deve aparecer.
+     A altura no style é só a inicial; o script ajusta ao conteúdo. -->
+<iframe class="onde-vota"
+  src="https://igorsiqueirahub.github.io/onde-vota-a-selecao/"
+  title="Onde vota a seleção"
+  style="width:100%;height:2100px;border:0;display:block" loading="lazy"></iframe>
+<script>
+/* Ajusta a altura do iframe ao conteúdo */
+(function () {
+  if (window.__ondeVota) return; window.__ondeVota = true;
+  window.addEventListener('message', function (e) {
+    var d = e.data; if (!d || d.type !== 'onde-vota:altura') return;
+    document.querySelectorAll('iframe.onde-vota').forEach(function (f) {
+      if (f.contentWindow === e.source) f.style.height = d.altura + 'px';
+    });
+  });
+})();
+</script>
