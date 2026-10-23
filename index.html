@@ -43,6 +43,8 @@
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; }
+/* Dentro do embed, a coluna da matéria já dá a margem lateral */
+html.no-embed body { padding-left: 0; padding-right: 0; padding-block: 8px; }
 img { max-width: 100%; }
 [hidden] { display: none !important; }
 body {
@@ -335,6 +337,7 @@ document.getElementById("g-none").innerHTML = players.filter(p => p[2] === "none
 /* Informa a altura ao embed (iframe), para a página que o hospeda ajustar o tamanho */
 (function () {
   if (window.parent === window) return;
+  document.documentElement.classList.add('no-embed');
   var ultima = 0;
   function enviar() {
     var h = Math.ceil(document.documentElement.getBoundingClientRect().height);
