@@ -1,18 +1,8 @@
-<!-- Cole este trecho no código-fonte da sua página, onde o infográfico deve aparecer.
-     A altura no style é só a inicial; o script ajusta ao conteúdo. -->
+<!-- Cole este trecho no bloco de HTML da matéria, onde o infográfico deve aparecer.
+     A altura no style já acompanha a largura da tela (coluna do UOL: tela - 32 px até 969 px, 640 px acima),
+     então funciona sem script. O margin-bottom negativo anula a margem dos parágrafos do UOL
+     (24 px até 969 px de tela, 32 px acima); em outro site, ajuste para a margem dele. -->
 <iframe class="onde-vota"
   src="https://igorsiqueirahub.github.io/onde-vota-a-selecao/"
   title="Onde vota a seleção"
-  style="width:100%;height:2100px;border:0;display:block" loading="lazy"></iframe>
-<script>
-/* Ajusta a altura do iframe ao conteúdo */
-(function () {
-  if (window.__ondeVota) return; window.__ondeVota = true;
-  window.addEventListener('message', function (e) {
-    var d = e.data; if (!d || d.type !== 'onde-vota:altura') return;
-    document.querySelectorAll('iframe.onde-vota').forEach(function (f) {
-      if (f.contentWindow === e.source) f.style.height = d.altura + 'px';
-    });
-  });
-})();
-</script>
+  style="width:100%;height:calc(2254px + min(21px, max(0px, ((297px - 100vw) * 21))) + min(20px, max(0px, ((300px - 100vw) * 20))) + min(38px, max(0px, ((305px - 100vw) * 38))) + min(73px, max(0px, ((309px - 100vw) * 73))) + min(34px, max(0px, ((311px - 100vw) * 34))) + min(38px, max(0px, ((317px - 100vw) * 38))) + min(17px, max(0px, ((330px - 100vw) * 17))) + min(41px, max(0px, ((341px - 100vw) * 41))) + min(34px, max(0px, ((348px - 100vw) * 34))) + min(56px, max(0px, ((361px - 100vw) * 56))) + min(18px, max(0px, ((366px - 100vw) * 18))) + min(29px, max(0px, ((379px - 100vw) * 29))) + min(39px, max(0px, ((387px - 100vw) * 39))) + min(28px, max(0px, ((399px - 100vw) * 28))) + min(12px, max(0px, ((428px - 100vw) * 12))) + min(17px, max(0px, ((461px - 100vw) * 17))) + min(45px, max(0px, ((479px - 100vw) * 45))) + min(488px, max(0px, ((482px - 100vw) * 488))) + min(19px, max(0px, ((483px - 100vw) * 19))) + min(19px, max(0px, ((493px - 100vw) * 19))) + min(41px, max(0px, ((496px - 100vw) * 41))) + min(20px, max(0px, ((510px - 100vw) * 20))) + min(35px, max(0px, ((519px - 100vw) * 35))) + min(130px, max(0px, ((533px - 100vw) * 130))) - min(21px, max(0px, ((540px - 100vw) * 21))) + min(189px, max(0px, ((593px - 100vw) * 189))) + min(17px, max(0px, ((643px - 100vw) * 17))) + min(39px, max(0px, ((701px - 100vw) * 39))) + min(79px, max(0px, ((712px - 100vw) * 79))) + min(37px, max(0px, ((722px - 100vw) * 37))) + min(34px, max(0px, ((749px - 100vw) * 34))) - min(183px, max(0px, ((970px - 100vw) * 183))));margin:0 0 calc(-24px - min(8px, max(0px, ((100vw - 969px) * 8))));border:0;display:block" loading="lazy"></iframe>
